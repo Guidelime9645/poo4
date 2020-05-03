@@ -1,40 +1,19 @@
 <?php
-class Cars{
-    /**
-     * @var bool
-     */
-    private $hasParkBrake;
+class Cars extends Vehicle implements LightableInterface
+{
 
-
-
-    public function start()
+    public function switchOn(bool $percentage) :boolean
     {
-        if ($this->hasParkBrake === true) {
-            throw new Exception("Activé");
-        }
+       return true;
     }
 
-    /**
-     * Get the value of hasParkBrake
-     *
-     * @return  bool
-     */
-    public function getHasParkBrake()
+    public function switchOff(bool $percentage) :boolean
     {
-        return $this->hasParkBrake;
+       return false;
     }
 
-    /**
-     * Set the value of hasParkBrake
-     *
-     * @param  bool  $hasParkBrake
-     *
-     * @return  self
-     */
-    public function setHasParkBrake(bool $hasParkBrake)
-    {
-        $this->hasParkBrake = $hasParkBrake;
 
-        return $this;
-    }
+
 }
+
+
